@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gimnasia Cerebral para Docentes | Evolucione</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,21 +15,12 @@
             --magenta: #FF0C88;
             --coral: #F34D47;
             --orange: #FFA111;
-            --purple-dark: #630782;
             --white: #FFFFFF;
             --text-gray: #b8b8d0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg-dark);
@@ -40,10 +31,8 @@
 
         .bg-shapes {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
@@ -51,18 +40,17 @@
 
         .bg-shape {
             position: absolute;
-            opacity: 0.15;
+            opacity: 0.12;
             animation: float-shape 20s ease-in-out infinite;
         }
 
         .shape-1 { width: 400px; top: -100px; right: -100px; }
         .shape-2 { width: 350px; bottom: 10%; left: -150px; animation-delay: -5s; }
         .shape-3 { width: 300px; top: 40%; right: -100px; animation-delay: -10s; }
-        .shape-4 { width: 250px; bottom: -50px; right: 20%; animation-delay: -15s; }
 
         @keyframes float-shape {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            50% { transform: translateY(-30px) rotate(10deg) scale(1.05); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
         }
 
         .container {
@@ -73,19 +61,11 @@
             padding: 0 1.5rem;
         }
 
-        header {
-            padding: 1.5rem 0;
-            text-align: center;
-        }
+        header { padding: 1.5rem 0; text-align: center; }
+        .logo { height: 50px; }
 
-        .logo {
-            height: 50px;
-        }
-
-        .hero {
-            padding: 2rem 0 3rem;
-            text-align: center;
-        }
+        /* HERO */
+        .hero { padding: 2rem 0 1.5rem; text-align: center; }
 
         .hero-badge {
             display: inline-flex;
@@ -102,8 +82,7 @@
         }
 
         .badge-pulse {
-            width: 8px;
-            height: 8px;
+            width: 8px; height: 8px;
             background: var(--cyan);
             border-radius: 50%;
             animation: pulse 2s infinite;
@@ -115,7 +94,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-size: clamp(1.8rem, 5vw, 3rem);
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 1rem;
@@ -126,39 +105,31 @@
         }
 
         .hero-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-gray);
             max-width: 650px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
         }
 
         .stats-row {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            margin: 2rem 0;
+            gap: 2rem;
             flex-wrap: wrap;
         }
 
         .stat { text-align: center; }
-
         .stat-value {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--cyan), var(--magenta));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .stat-label { font-size: 0.8rem; color: var(--text-gray); }
 
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-        }
-
-        /* VIDEO PLAYER BLOQUEADO */
-        .video-section {
-            padding: 2rem 0;
-        }
+        /* VIDEO SECTION */
+        .video-section { padding: 2rem 0; }
 
         .video-wrapper {
             position: relative;
@@ -179,27 +150,22 @@
 
         .video-thumbnail {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: 20;
             cursor: pointer;
             background: #000;
         }
 
         .video-thumbnail img {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             object-fit: cover;
         }
 
         .video-thumbnail-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.5) 100%);
             transition: all 0.3s ease;
         }
@@ -210,16 +176,14 @@
 
         .play-button-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
         }
 
         .play-button {
             position: relative;
-            width: 90px;
-            height: 90px;
+            width: 90px; height: 90px;
             border-radius: 50%;
             background: var(--magenta);
             display: flex;
@@ -239,15 +203,6 @@
             animation: pulse-ring 2s infinite;
         }
 
-        .play-button::after {
-            content: '';
-            position: absolute;
-            top: -20px; left: -20px; right: -20px; bottom: -20px;
-            border-radius: 50%;
-            background: rgba(255, 12, 136, 0.15);
-            animation: pulse-ring 2s infinite 0.5s;
-        }
-
         @keyframes pulse-ring {
             0% { transform: scale(1); opacity: 1; }
             100% { transform: scale(1.5); opacity: 0; }
@@ -258,25 +213,19 @@
             box-shadow: 0 0 70px rgba(255, 12, 136, 0.8);
         }
 
-        .play-button svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-            margin-left: 5px;
-        }
+        .play-button svg { width: 35px; height: 35px; fill: white; margin-left: 5px; }
 
         .play-text {
             margin-top: 1.5rem;
             color: white;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .video-duration {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 20px; right: 20px;
             background: rgba(0,0,0,0.8);
             color: white;
             padding: 0.4rem 0.8rem;
@@ -287,104 +236,379 @@
 
         .video-iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: none;
         }
 
         .video-blocker {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: 10;
             background: transparent;
             cursor: default;
         }
 
-        .video-message {
+        .hidden { display: none !important; }
+
+        /* UNLOCK TIMER - DEBAJO DEL VIDEO */
+        .unlock-timer-section {
+            margin-top: 1.5rem;
             text-align: center;
-            padding: 1rem;
-            background: linear-gradient(135deg, rgba(255, 12, 136, 0.15), rgba(101, 31, 255, 0.1));
-            border-top: 1px solid rgba(255, 12, 136, 0.3);
         }
 
-        .video-message-content {
+        .unlock-timer-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 12, 136, 0.15), rgba(101, 31, 255, 0.1));
+            border: 2px solid rgba(255, 12, 136, 0.4);
+            border-radius: 20px;
+            padding: 1.5rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unlock-timer-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer { to { left: 100%; } }
+
+        .unlock-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: lock-shake 2s ease-in-out infinite;
+        }
+
+        @keyframes lock-shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .unlock-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .unlock-timer-display {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--magenta), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .unlock-subtitle {
+            font-size: 0.85rem;
+            color: var(--cyan);
+            margin-top: 0.5rem;
+        }
+
+        /* Progress bar */
+        .unlock-progress {
+            width: 100%;
+            max-width: 300px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .unlock-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--magenta), var(--orange));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s linear;
+        }
+
+        /* WhatsApp CTA debajo del timer */
+        .whatsapp-cta-inline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 50px;
+            color: #25D366;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-cta-inline:hover {
+            background: #25D366;
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .whatsapp-cta-inline svg {
+            width: 24px; height: 24px;
+            fill: currentColor;
+        }
+
+        /* ============================================
+           POPUP DE OFERTA
+           ============================================ */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-overlay.visible {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: linear-gradient(135deg, #1a0a30, #0D0036);
+            border: 2px solid var(--magenta);
+            border-radius: 24px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px; right: 15px;
+            width: 35px; height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: var(--text-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-close:hover {
+            background: var(--magenta);
+            color: white;
+        }
+
+        .popup-header {
+            text-align: center;
+            padding: 2rem 2rem 1rem;
+            background: linear-gradient(135deg, rgba(255, 12, 136, 0.2), rgba(101, 31, 255, 0.1));
+        }
+
+        .popup-badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            color: var(--white);
-            font-weight: 500;
+            gap: 0.5rem;
+            background: var(--magenta);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse-badge 2s infinite;
         }
 
-        .video-message-icon {
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .popup-title {
             font-size: 1.5rem;
-            animation: bounce-gift 1s ease-in-out infinite;
-        }
-
-        @keyframes bounce-gift {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-5px) rotate(-5deg); }
-            75% { transform: translateY(-5px) rotate(5deg); }
-        }
-
-        .video-message-text {
-            background: linear-gradient(135deg, var(--cyan), var(--magenta));
+            font-weight: 800;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--white), var(--cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .video-progress-bar {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            padding: 0.75rem 1.5rem;
-            background: rgba(24, 255, 255, 0.1);
-            border: 1px solid rgba(24, 255, 255, 0.3);
-            border-radius: 50px;
+        .popup-body {
+            padding: 1.5rem 2rem 2rem;
         }
 
-        .video-progress-bar.visible { display: inline-flex; }
-
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(24, 255, 255, 0.3);
-            border-top-color: var(--cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .popup-timer {
+            background: rgba(243, 77, 71, 0.15);
+            border: 1px solid rgba(243, 77, 71, 0.4);
+            border-radius: 12px;
+            padding: 0.75rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
 
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        .skip-btn {
-            display: none;
-            margin-top: 1rem;
-            padding: 0.75rem 2rem;
-            background: transparent;
-            border: 2px solid var(--magenta);
-            color: var(--magenta);
-            border-radius: 50px;
-            font-family: inherit;
-            font-size: 1rem;
+        .popup-timer-label {
+            font-size: 0.8rem;
+            color: var(--coral);
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .skip-btn.visible { display: inline-block; }
-
-        .skip-btn:hover {
-            background: var(--magenta);
+        .popup-timer-display {
+            font-size: 1.5rem;
+            font-weight: 800;
             color: var(--white);
         }
 
-        .hidden { display: none !important; }
+        .popup-price {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-price-original {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            text-decoration: line-through;
+        }
+
+        .popup-price-current {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .popup-price-current span { font-size: 1.5rem; }
+
+        .popup-savings {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyan), #00b894);
+            color: var(--bg-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .popup-features {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+        }
+
+        .popup-feature-check {
+            width: 18px; height: 18px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        .popup-cta {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--magenta), var(--orange));
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 12, 136, 0.4);
+        }
+
+        .popup-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 12, 136, 0.5);
+        }
+
+        .popup-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 12px;
+            color: #25D366;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .popup-whatsapp:hover {
+            background: #25D366;
+            color: white;
+        }
+
+        .popup-whatsapp svg {
+            width: 20px; height: 20px;
+            fill: currentColor;
+        }
+
+        .popup-guarantee {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--text-gray);
+        }
+
+        .popup-guarantee span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
 
         /* PROBLEMS */
         .problems-section { padding: 3rem 0; }
@@ -439,6 +663,64 @@
         .problems-note p { color: var(--text-gray); font-size: 1.05rem; }
         .problems-note strong { color: var(--white); }
 
+        /* WhatsApp Banner */
+        .whatsapp-banner {
+            margin-top: 2rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .whatsapp-banner-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .whatsapp-banner-text span:first-child {
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-banner-text p {
+            font-weight: 500;
+        }
+
+        .whatsapp-banner-text p small {
+            display: block;
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        .whatsapp-banner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-banner-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-banner-btn svg {
+            width: 20px; height: 20px;
+            fill: currentColor;
+        }
+
         /* SOLUTION */
         .solution-section { padding: 3rem 0; }
 
@@ -470,8 +752,7 @@
         .solution-list li:last-child { border-bottom: none; }
 
         .check-icon {
-            width: 24px;
-            height: 24px;
+            width: 24px; height: 24px;
             background: linear-gradient(135deg, var(--cyan), var(--purple));
             border-radius: 50%;
             display: flex;
@@ -483,8 +764,7 @@
         }
 
         .x-icon {
-            width: 24px;
-            height: 24px;
+            width: 24px; height: 24px;
             background: rgba(243, 77, 71, 0.2);
             border: 1px solid var(--coral);
             border-radius: 50%;
@@ -495,235 +775,6 @@
             color: var(--coral);
             flex-shrink: 0;
             margin-top: 2px;
-        }
-
-        /* OFFER - HIDDEN */
-        .offer-section {
-            display: none;
-            padding: 3rem 0;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .offer-section.visible { display: block; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .offer-card {
-            background: linear-gradient(135deg, rgba(101, 31, 255, 0.2), rgba(255, 12, 136, 0.1));
-            border: 2px solid var(--magenta);
-            border-radius: 30px;
-            padding: 2.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .offer-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer { to { left: 100%; } }
-
-        .offer-unlocked {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--magenta);
-            color: var(--white);
-            padding: 0.6rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            animation: pulse-badge 2s infinite;
-        }
-
-        @keyframes pulse-badge {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-
-        .offer-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        .timer-box {
-            background: rgba(243, 77, 71, 0.15);
-            border: 1px solid rgba(243, 77, 71, 0.4);
-            border-radius: 16px;
-            padding: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .timer-label {
-            font-size: 0.9rem;
-            color: var(--coral);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timer-display {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--white);
-            font-variant-numeric: tabular-nums;
-        }
-
-        .price-block { margin-bottom: 2rem; }
-
-        .price-original {
-            font-size: 1.3rem;
-            color: var(--text-gray);
-            text-decoration: line-through;
-        }
-
-        .price-current {
-            font-size: 4.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--white), var(--cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-        }
-
-        .price-current span { font-size: 2rem; }
-
-        .price-savings {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--cyan), #00b894);
-            color: var(--bg-dark);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-top: 0.75rem;
-        }
-
-        .offer-includes {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .includes-title {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .includes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 0.75rem;
-        }
-
-        .include-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-        }
-
-        .include-check {
-            width: 22px;
-            height: 22px;
-            background: linear-gradient(135deg, var(--cyan), var(--purple));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            flex-shrink: 0;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-            background: linear-gradient(135deg, var(--magenta), var(--orange));
-            color: var(--white);
-            padding: 1.25rem 2rem;
-            border: none;
-            border-radius: 16px;
-            font-family: inherit;
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(255, 12, 136, 0.4);
-            animation: pulse-btn 2s infinite;
-        }
-
-        @keyframes pulse-btn {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(255, 12, 136, 0.4); }
-            50% { transform: scale(1.02); box-shadow: 0 15px 50px rgba(255, 12, 136, 0.5); }
-        }
-
-        .cta-button:hover { transform: translateY(-3px) scale(1.02); }
-
-        .guarantees {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-
-        .savings-character {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 161, 17, 0.1);
-            border: 1px solid rgba(255, 161, 17, 0.3);
-            border-radius: 20px;
-            flex-wrap: wrap;
-        }
-
-        .savings-character img { width: 120px; }
-
-        .savings-character-text { text-align: left; }
-
-        .savings-character-text h4 {
-            color: var(--orange);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .savings-character-text p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
         }
 
         /* TESTIMONIALS */
@@ -763,8 +814,7 @@
         }
 
         .testimonial-avatar {
-            width: 55px;
-            height: 55px;
+            width: 55px; height: 55px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--purple);
@@ -834,8 +884,7 @@
         }
 
         .instructor-image {
-            width: 180px;
-            height: 180px;
+            width: 180px; height: 180px;
             border-radius: 20px;
             object-fit: cover;
             border: 3px solid var(--purple);
@@ -879,13 +928,91 @@
 
         .classroom-text p { color: var(--text-gray); margin-bottom: 1rem; }
 
-        /* WHATSAPP */
+        /* FINAL CTA Section */
+        .final-cta-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .final-cta-box {
+            background: linear-gradient(135deg, rgba(101, 31, 255, 0.2), rgba(255, 12, 136, 0.1));
+            border: 2px solid var(--magenta);
+            border-radius: 24px;
+            padding: 2.5rem;
+        }
+
+        .final-cta-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta-price {
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-price .original {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            text-decoration: line-through;
+        }
+
+        .final-cta-price .current {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--magenta), var(--orange));
+            color: white;
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 16px;
+            font-family: inherit;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 12, 136, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 12, 136, 0.5);
+        }
+
+        .final-cta-whatsapp {
+            margin-top: 1.5rem;
+        }
+
+        .final-cta-whatsapp a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .final-cta-whatsapp a:hover { text-decoration: underline; }
+
+        .final-cta-whatsapp svg {
+            width: 20px; height: 20px;
+            fill: currentColor;
+        }
+
+        /* WHATSAPP FLOAT */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
+            bottom: 25px; right: 25px;
+            width: 60px; height: 60px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
@@ -919,7 +1046,7 @@
             }
 
             .solution-image, .classroom-image {
-                max-width: 300px;
+                max-width: 280px;
                 margin: 0 auto;
             }
 
@@ -928,20 +1055,28 @@
                 text-align: center;
             }
 
-            .price-current { font-size: 3.5rem; }
-            .offer-card { padding: 1.5rem; }
-            .bg-shape { opacity: 0.08; }
-
-            .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
-                width: 55px;
-                height: 55px;
+            .whatsapp-banner {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .play-button { width: 75px; height: 75px; }
+            .popup-content { margin: 0.5rem; }
+            .popup-header, .popup-body { padding: 1.5rem; }
+            .popup-price-current { font-size: 2.5rem; }
+
+            .unlock-timer-display { font-size: 2rem; }
+            .unlock-timer-box { padding: 1rem 1.5rem; }
+
+            .play-button { width: 70px; height: 70px; }
             .play-button svg { width: 28px; height: 28px; }
-            .play-text { font-size: 1.1rem; }
+            .play-text { font-size: 1rem; }
+
+            .whatsapp-float {
+                bottom: 15px; right: 15px;
+                width: 55px; height: 55px;
+            }
+
+            .final-cta-price .current { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -950,7 +1085,6 @@
         <img src="assets/Forma_1.png" class="bg-shape shape-1" alt="">
         <img src="assets/Forma_2.png" class="bg-shape shape-2" alt="">
         <img src="assets/Forma_3.png" class="bg-shape shape-3" alt="">
-        <img src="assets/Forma_8.png" class="bg-shape shape-4" alt="">
     </div>
 
     <header>
@@ -966,11 +1100,11 @@
                 +400 docentes ya lo tienen
             </div>
             <h1>Cuidar tu mente desde donde enseñas</h1>
-            <p class="hero-subtitle">Un curso de gimnasia cerebral pensado para docentes con alta carga mental. Ejercicios de 1-2 minutos que puedes usar antes, durante o después de tu jornada.</p>
+            <p class="hero-subtitle">Curso de gimnasia cerebral para docentes con alta carga mental. Ejercicios de 1-2 minutos que puedes usar antes, durante o después de tu jornada.</p>
             <div class="stats-row">
                 <div class="stat">
                     <div class="stat-value">24</div>
-                    <div class="stat-label">Ejercicios prácticos</div>
+                    <div class="stat-label">Ejercicios</div>
                 </div>
                 <div class="stat">
                     <div class="stat-value">95%</div>
@@ -996,29 +1130,81 @@
                             <div class="play-button">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </div>
-                            <p class="play-text">▶ Toca para ver el video</p>
+                            <p class="play-text">▶ Ver video completo</p>
                         </div>
                         <div class="video-duration">4:32</div>
                     </div>
                     <div class="video-blocker hidden" id="video-blocker"></div>
-                    <iframe id="video-iframe" class="video-iframe hidden" src="" title="Gimnasia Cerebral para Docentes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="video-message">
-                    <div class="video-message-content">
-                        <span class="video-message-icon">🎁</span>
-                        <span class="video-message-text">Al terminar el video obtendrás un descuento exclusivo</span>
-                    </div>
+                    <iframe id="video-iframe" class="video-iframe hidden" src="" title="Gimnasia Cerebral" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1rem;">
-                <div class="video-progress-bar" id="video-progress">
-                    <div class="spinner"></div>
-                    <span style="color: var(--cyan);">Preparando tu descuento...</span>
+
+            <!-- TEMPORIZADOR DE DESBLOQUEO -->
+            <div class="unlock-timer-section" id="unlock-timer-section">
+                <div class="unlock-timer-box">
+                    <div class="unlock-icon" id="unlock-icon">🔒</div>
+                    <div class="unlock-label">Tu promoción se desbloquea en:</div>
+                    <div class="unlock-timer-display" id="unlock-timer">04:32</div>
+                    <div class="unlock-subtitle">Mira el video completo para obtener tu descuento</div>
+                    <div class="unlock-progress">
+                        <div class="unlock-progress-bar" id="unlock-progress-bar"></div>
+                    </div>
                 </div>
-                <button class="skip-btn" id="skip-btn" onclick="revealOffer()">Ya vi el video → Ver mi descuento</button>
+
+                <a href="https://wa.me/5213311138538?text=Hola,%20tengo%20dudas%20del%20curso%20de%20Gimnasia%20Cerebral%20para%20docentes%20🧠👩‍🏫" class="whatsapp-cta-inline" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    ¿Dudas? Escríbenos por WhatsApp
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- POPUP DE OFERTA -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            
+            <div class="popup-header">
+                <div class="popup-badge">🎉 ¡Descuento Desbloqueado!</div>
+                <h2 class="popup-title">Tu promoción exclusiva está lista</h2>
+            </div>
+            
+            <div class="popup-body">
+                <div class="popup-timer">
+                    <div class="popup-timer-label">⏰ Oferta válida por:</div>
+                    <div class="popup-timer-display" id="popup-countdown">23:59:59</div>
+                </div>
+
+                <div class="popup-price">
+                    <div class="popup-price-original">$2,200 MXN</div>
+                    <div class="popup-price-current"><span>$</span>300<span> MXN</span></div>
+                    <div class="popup-savings">🎁 Ahorras $1,900</div>
+                </div>
+
+                <div class="popup-features">
+                    <div class="popup-feature"><span class="popup-feature-check">✓</span> 24 ejercicios prácticos</div>
+                    <div class="popup-feature"><span class="popup-feature-check">✓</span> 4 clases adicionales</div>
+                    <div class="popup-feature"><span class="popup-feature-check">✓</span> Comunidad EMA de docentes</div>
+                    <div class="popup-feature"><span class="popup-feature-check">✓</span> Certificado + Acceso de por vida</div>
+                </div>
+
+                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="popup-cta">
+                    ¡Quiero mi descuento! →
+                </a>
+
+                <a href="https://wa.me/5213311138538?text=Hola,%20quiero%20más%20información%20del%20curso%20de%20Gimnasia%20Cerebral%20🧠" class="popup-whatsapp" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    ¿Tienes dudas? Escríbenos
+                </a>
+
+                <div class="popup-guarantee">
+                    <span>🔒 Pago seguro</span>
+                    <span>✅ 7 días garantía</span>
+                    <span>💳 Hotmart</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="problems-section">
         <div class="container">
@@ -1037,6 +1223,18 @@
             <div class="problems-note">
                 <p>Nada de eso habla mal de ti como docente.<br><strong>Habla del contexto en el que trabajas.</strong></p>
             </div>
+
+            <!-- WhatsApp Banner -->
+            <div class="whatsapp-banner">
+                <div class="whatsapp-banner-text">
+                    <span>💬</span>
+                    <p>¿Tienes preguntas sobre el curso?<small>Respuesta en menos de 2 horas</small></p>
+                </div>
+                <a href="https://wa.me/5213311138538?text=Hola,%20tengo%20dudas%20del%20curso%20de%20Gimnasia%20Cerebral%20🧠" class="whatsapp-banner-btn" target="_blank">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Enviar mensaje
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1046,7 +1244,7 @@
                 <img src="assets/EMA_EXPLICACION.png" alt="Curso Online" class="solution-image">
                 <div class="solution-text">
                     <h2>¿Qué propone este curso?</h2>
-                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Una herramienta práctica de autorregulación cognitiva basada en:</p>
+                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Una herramienta práctica de autorregulación cognitiva:</p>
                     <ul class="solution-list">
                         <li><span class="check-icon">✓</span><span><strong>Movimientos simples</strong> — ejercicios de 1-2 minutos</span></li>
                         <li><span class="check-icon">✓</span><span><strong>Respiración consciente</strong> — regula desde el cuerpo</span></li>
@@ -1060,125 +1258,104 @@
         </div>
     </section>
 
-    <!-- OFERTA OCULTA -->
-    <section class="offer-section" id="offer-section">
+    <section class="testimonials-section">
         <div class="container">
-            <div class="offer-card">
-                <div class="offer-unlocked">🎉 ¡Descuento Desbloqueado!</div>
-                <h3 class="offer-title">Acceso completo al curso de Gimnasia Cerebral para Docentes</h3>
-                <div class="timer-box">
-                    <div class="timer-label">⏰ Tu descuento expira en:</div>
-                    <div class="timer-display" id="countdown">23:59:59</div>
-                </div>
-                <div class="price-block">
-                    <div class="price-original">Precio regular: $2,200 MXN</div>
-                    <div class="price-current"><span>$</span>300<span> MXN</span></div>
-                    <div class="price-savings">🎁 ¡Ahorras $1,900!</div>
-                </div>
-                <div class="offer-includes">
-                    <div class="includes-title">Tu acceso incluye:</div>
-                    <div class="includes-grid">
-                        <div class="include-item"><span class="include-check">✓</span><span>24 ejercicios prácticos</span></div>
-                        <div class="include-item"><span class="include-check">✓</span><span>4 clases adicionales</span></div>
-                        <div class="include-item"><span class="include-check">✓</span><span>Comunidad EMA de docentes</span></div>
-                        <div class="include-item"><span class="include-check">✓</span><span>Certificado de finalización</span></div>
-                        <div class="include-item"><span class="include-check">✓</span><span>Acceso de por vida</span></div>
-                        <div class="include-item"><span class="include-check">✓</span><span>7 días de garantía</span></div>
+            <div class="section-header"><h2>Lo que dicen otros docentes</h2></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Después de 2 semanas notaba más claridad mental. Los ejercicios son cortos y funcionan."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/maestra_Laura.jpg" alt="Laura" class="testimonial-avatar">
+                        <div class="testimonial-info"><h4>Laura Martin</h4><p>Docente de Secundaria</p></div>
                     </div>
                 </div>
-                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="cta-button">¡Quiero mi descuento! →</a>
-                <div class="guarantees">
-                    <div class="guarantee-item"><span>🔒</span><span>Pago 100% seguro</span></div>
-                    <div class="guarantee-item"><span>✅</span><span>Garantía 7 días</span></div>
-                    <div class="guarantee-item"><span>💳</span><span>Hotmart</span></div>
-                </div>
-                <div class="savings-character">
-                    <img src="assets/jorgito-ahorro.png" alt="Ahorra">
-                    <div class="savings-character-text">
-                        <h4>¡Estás ahorrando $1,900!</h4>
-                        <p>Este descuento exclusivo no estará disponible por mucho tiempo.</p>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Lo que más me gustó es que no agrega carga. Se adapta a mi día, no al revés."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/Maestro_Carlos.jpg" alt="Carlos" class="testimonial-avatar">
+                        <div class="testimonial-info"><h4>Carlos Pérez</h4><p>Director de Primaria</p></div>
                     </div>
                 </div>
-            </div>
-
-            <div class="testimonials-section">
-                <div class="section-header"><h2>Lo que dicen otros docentes</h2></div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Después de 2 semanas notaba más claridad mental. Los ejercicios son cortos y funcionan."</p>
-                        <div class="testimonial-author">
-                            <img src="assets/maestra_Laura.jpg" alt="Laura" class="testimonial-avatar">
-                            <div class="testimonial-info"><h4>Laura Martin</h4><p>Docente de Secundaria</p></div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Lo que más me gustó es que no agrega carga. Se adapta a mi día, no al revés."</p>
-                        <div class="testimonial-author">
-                            <img src="assets/Maestro_Carlos.jpg" alt="Carlos" class="testimonial-avatar">
-                            <div class="testimonial-info"><h4>Carlos Pérez</h4><p>Director de Primaria</p></div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">"Me gusta porque son ejercicios simples pero retadores y puedo ir avanzando a mi ritmo."</p>
-                        <div class="testimonial-author">
-                            <img src="assets/maestra_Ana.jpg" alt="Ana" class="testimonial-avatar">
-                            <div class="testimonial-info"><h4>Ana Julia Hernández</h4><p>Docente de Preparatoria</p></div>
-                        </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Me gusta porque son ejercicios simples pero retadores y puedo ir avanzando a mi ritmo."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/maestra_Ana.jpg" alt="Ana" class="testimonial-avatar">
+                        <div class="testimonial-info"><h4>Ana Julia Hernández</h4><p>Docente de Preparatoria</p></div>
                     </div>
                 </div>
-            </div>
-
-            <div class="faq-section">
-                <div class="section-header"><h2>Preguntas frecuentes</h2></div>
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)"><span>No tengo tiempo para otro curso</span><span class="faq-icon">+</span></div>
-                        <div class="faq-answer"><div class="faq-answer-content">Los ejercicios son de 1-2 minutos. No reemplazan nada, se adaptan entre lo que ya haces. Es una herramienta, no una capacitación más.</div></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)"><span>¿Y si no soy constante?</span><span class="faq-icon">+</span></div>
-                        <div class="faq-answer"><div class="faq-answer-content">No exige constancia perfecta. Puedes usarlo cuando lo necesites y retomarlo cuando quieras. La idea es que quede disponible como recurso.</div></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)"><span>¿Durante cuánto tiempo tengo acceso?</span><span class="faq-icon">+</span></div>
-                        <div class="faq-answer"><div class="faq-answer-content">De por vida. Es tuyo para siempre. Muchos docentes vuelven a ciertos ejercicios según el momento del año o el nivel de carga.</div></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question" onclick="toggleFaq(this)"><span>¿Qué pasa si no estoy satisfecho?</span><span class="faq-icon">+</span></div>
-                        <div class="faq-answer"><div class="faq-answer-content">7 días de garantía sin preguntas. Si no es para ti, te devolvemos tu dinero completo.</div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="instructor-section">
-                <div class="instructor-card">
-                    <img src="assets/ema_milena_4.png" alt="Milena Sandoval" class="instructor-image">
-                    <div class="instructor-info">
-                        <h3>Milena Sandoval</h3>
-                        <p class="role">Especialista en Gimnasia Cerebral • CEO de Evolucione</p>
-                        <p>Más de dos décadas de experiencia trabajando con estudiantes, educadores y profesionales. Enfoque práctico, respetuoso y orientado a resultados reales en contextos educativos.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="classroom-section">
-                <div class="classroom-content">
-                    <img src="assets/EMA-AULA.png" alt="Gimnasia Cerebral en el Aula" class="classroom-image">
-                    <div class="classroom-text">
-                        <h3>¿Se puede usar también en el aula?</h3>
-                        <p>El curso está pensado principalmente para el uso personal del docente. Dicho esto, muchos de los ejercicios son tan simples que algunos docentes deciden utilizarlos como <strong>pausas breves con sus estudiantes</strong>, especialmente en momentos de cansancio o transición.</p>
-                        <p>No es una técnica pedagógica. Es una práctica sencilla que cada docente puede adaptar con criterio propio.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; padding: 2rem 0;">
-                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="cta-button" style="max-width: 500px;">Acceder al curso por $300 MXN →</a>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/5213311138538?text=Hola,%20tengo%20dudas%20del%20curso%20de%20Gimnasia%20Cerebral%20para%20docentes%20🧠👩‍🏫" class="whatsapp-float" target="_blank" title="¿Dudas? Escríbenos">
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header"><h2>Preguntas frecuentes</h2></div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)"><span>No tengo tiempo para otro curso</span><span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">Los ejercicios son de 1-2 minutos. No reemplazan nada, se adaptan entre lo que ya haces.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)"><span>¿Y si no soy constante?</span><span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">No exige constancia perfecta. Úsalo cuando lo necesites y retómalo cuando quieras.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)"><span>¿Durante cuánto tiempo tengo acceso?</span><span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">De por vida. Es tuyo para siempre.</div></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)"><span>¿Qué pasa si no estoy satisfecho?</span><span class="faq-icon">+</span></div>
+                    <div class="faq-answer"><div class="faq-answer-content">7 días de garantía sin preguntas. Te devolvemos tu dinero completo.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="instructor-section">
+        <div class="container">
+            <div class="instructor-card">
+                <img src="assets/ema_milena_4.png" alt="Milena Sandoval" class="instructor-image">
+                <div class="instructor-info">
+                    <h3>Milena Sandoval</h3>
+                    <p class="role">Especialista en Gimnasia Cerebral • CEO de Evolucione</p>
+                    <p>Más de dos décadas de experiencia trabajando con estudiantes, educadores y profesionales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="classroom-section">
+        <div class="container">
+            <div class="classroom-content">
+                <img src="assets/EMA-AULA.png" alt="Gimnasia Cerebral en el Aula" class="classroom-image">
+                <div class="classroom-text">
+                    <h3>¿Se puede usar en el aula?</h3>
+                    <p>El curso está pensado para el uso personal del docente. Muchos docentes también lo usan como <strong>pausas breves con sus estudiantes</strong> en momentos de cansancio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-box">
+                <h2 class="final-cta-title">¿Listo para cuidar tu mente?</h2>
+                <div class="final-cta-price">
+                    <div class="original">$2,200 MXN</div>
+                    <div class="current">$300 MXN</div>
+                </div>
+                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="cta-button">Acceder al curso →</a>
+                <div class="final-cta-whatsapp">
+                    <a href="https://wa.me/5213311138538?text=Hola,%20quiero%20información%20del%20curso%20de%20Gimnasia%20Cerebral%20🧠" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        ¿Dudas? Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/5213311138538?text=Hola,%20tengo%20dudas%20del%20curso%20de%20Gimnasia%20Cerebral%20🧠👩‍🏫" class="whatsapp-float" target="_blank">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
@@ -1186,86 +1363,119 @@
         <div class="container">
             <img src="assets/logo-evolucione-1-scaled.png" alt="Evolucione">
             <p>© 2025 Evolucione • Grupo Glivo</p>
-            <p style="margin-top: 0.5rem;">Producto comercializado con el apoyo de Hotmart</p>
         </div>
     </footer>
 
     <script>
+        // Variables
         let videoStarted = false;
-        let videoWatched = false;
-        let skipShown = false;
+        let videoEnded = false;
+        let unlockSeconds = 272; // 4:32 duración del video
+        let currentSeconds = unlockSeconds;
+        let unlockInterval = null;
         let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
 
+        // Elementos
         const thumbnail = document.getElementById('video-thumbnail');
         const videoIframe = document.getElementById('video-iframe');
         const videoBlocker = document.getElementById('video-blocker');
-        const videoProgress = document.getElementById('video-progress');
-        const skipBtn = document.getElementById('skip-btn');
+        const unlockTimer = document.getElementById('unlock-timer');
+        const unlockIcon = document.getElementById('unlock-icon');
+        const unlockProgressBar = document.getElementById('unlock-progress-bar');
+        const popupOverlay = document.getElementById('popup-overlay');
 
         const videoId = 'EQil5GmUF_s';
         const videoUrl = isMobile
-            ? `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&enablejsapi=1`
-            : `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&controls=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3&showinfo=0&fs=0&enablejsapi=1`;
+            ? `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`
+            : `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&controls=0&rel=0&modestbranding=1&disablekb=1&fs=0`;
 
+        // Click en thumbnail
         thumbnail.addEventListener('click', function() {
             if (videoStarted) return;
             videoStarted = true;
+
             thumbnail.classList.add('hidden');
             videoIframe.src = videoUrl;
             videoIframe.classList.remove('hidden');
-            if (!isMobile) videoBlocker.classList.remove('hidden');
-            videoProgress.classList.add('visible');
+            
+            if (!isMobile) {
+                videoBlocker.classList.remove('hidden');
+            }
 
-            setTimeout(function() {
-                if (!videoWatched) {
-                    skipBtn.classList.add('visible');
-                    skipShown = true;
-                }
-            }, 60000);
-
-            setTimeout(function() {
-                if (!videoWatched) revealOffer();
-            }, 275000);
+            startUnlockTimer();
         });
 
-        function revealOffer() {
-            if (videoWatched) return;
-            videoWatched = true;
-            videoProgress.classList.remove('visible');
-            skipBtn.classList.remove('visible');
-            const offerSection = document.getElementById('offer-section');
-            offerSection.classList.add('visible');
-            setTimeout(function() {
-                offerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 300);
-            startCountdown();
+        // Temporizador de desbloqueo
+        function startUnlockTimer() {
+            unlockInterval = setInterval(function() {
+                currentSeconds--;
+                
+                // Actualizar display
+                const mins = Math.floor(currentSeconds / 60);
+                const secs = currentSeconds % 60;
+                unlockTimer.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                
+                // Actualizar barra de progreso
+                const progress = ((unlockSeconds - currentSeconds) / unlockSeconds) * 100;
+                unlockProgressBar.style.width = progress + '%';
+
+                // Cuando llega a 0
+                if (currentSeconds <= 0) {
+                    clearInterval(unlockInterval);
+                    unlockIcon.textContent = '🔓';
+                    unlockTimer.textContent = '¡LISTO!';
+                    showPopup();
+                }
+            }, 1000);
         }
 
-        function startCountdown() {
+        // Mostrar popup
+        function showPopup() {
+            if (videoEnded) return;
+            videoEnded = true;
+            popupOverlay.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+            startPopupCountdown();
+        }
+
+        // Cerrar popup
+        function closePopup() {
+            popupOverlay.classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        // Click fuera del popup para cerrar
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+
+        // Countdown del popup
+        function startPopupCountdown() {
             let hours = 23, minutes = 59, seconds = 59;
-            function update() {
-                const display = document.getElementById('countdown');
+            
+            setInterval(function() {
+                const display = document.getElementById('popup-countdown');
                 if (display) {
                     display.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 }
+                
                 if (seconds > 0) seconds--;
                 else if (minutes > 0) { minutes--; seconds = 59; }
                 else if (hours > 0) { hours--; minutes = 59; seconds = 59; }
-            }
-            update();
-            setInterval(update, 1000);
+            }, 1000);
         }
 
+        // FAQ toggle
         function toggleFaq(element) {
             element.parentElement.classList.toggle('open');
         }
 
-        setTimeout(function() {
-            if (videoStarted && !videoWatched && !skipShown) {
-                skipBtn.classList.add('visible');
-                skipShown = true;
-            }
-        }, 120000);
+        // ESC para cerrar popup
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
     </script>
 </body>
 </html>
