@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasia Cerebral para Docentes | Evolucione</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0D0036;
+            --purple: #651FFF;
+            --cyan: #18FFFF;
+            --magenta: #FF0C88;
+            --coral: #F34D47;
+            --orange: #FFA111;
+            --purple-dark: #630782;
+            --white: #FFFFFF;
+            --text-gray: #b8b8d0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background with shapes */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: float-shape 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 400px;
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 350px;
+            bottom: 10%;
+            left: -150px;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 300px;
+            top: 40%;
+            right: -100px;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 250px;
+            bottom: -50px;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float-shape {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-30px) rotate(10deg) scale(1.05); }
+        }
+
+        /* Container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            height: 50px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 2rem 0 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(101, 31, 255, 0.3), rgba(24, 255, 255, 0.2));
+            border: 1px solid rgba(24, 255, 255, 0.3);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--cyan);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge-pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--cyan);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(24, 255, 255, 0.5); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 10px rgba(24, 255, 255, 0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--cyan) 50%, var(--magenta) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-image {
+            max-width: 350px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--cyan), var(--magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* VIDEO SECTION - THE MAIN FOCUS */
+        .video-section {
+            padding: 2rem 0;
+        }
+
+        .video-intro {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-intro h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-intro p {
+            color: var(--text-gray);
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 
+                0 0 0 2px rgba(24, 255, 255, 0.3),
+                0 0 60px rgba(101, 31, 255, 0.3),
+                0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-glow {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, var(--cyan), var(--magenta), var(--orange), var(--cyan));
+            border-radius: 22px;
+            z-index: -1;
+            animation: glow-rotate 4s linear infinite;
+            background-size: 300% 300%;
+        }
+
+        @keyframes glow-rotate {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-cta {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(101, 31, 255, 0.2), rgba(255, 12, 136, 0.1));
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .video-cta-icon {
+            font-size: 1.5rem;
+            animation: bounce-icon 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce-icon {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        .video-cta-text {
+            font-weight: 600;
+            color: var(--cyan);
+        }
+
+        /* Progress indicator */
+        .video-progress {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(24, 255, 255, 0.1);
+            border: 1px solid rgba(24, 255, 255, 0.2);
+            border-radius: 12px;
+        }
+
+        .video-progress.visible {
+            display: flex;
+        }
+
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(24, 255, 255, 0.3);
+            border-top-color: var(--cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .progress-text {
+            color: var(--cyan);
+            font-weight: 500;
+        }
+
+        /* Skip button */
+        .skip-btn {
+            display: none;
+            margin: 1.5rem auto 0;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 2px solid var(--magenta);
+            color: var(--magenta);
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .skip-btn.visible {
+            display: block;
+        }
+
+        .skip-btn:hover {
+            background: var(--magenta);
+            color: var(--white);
+        }
+
+        /* Problems Section */
+        .problems-section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .problem-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(243, 77, 71, 0.1);
+            border: 1px solid rgba(243, 77, 71, 0.3);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateX(5px);
+            background: rgba(243, 77, 71, 0.15);
+        }
+
+        .problem-icon {
+            font-size: 1.5rem;
+        }
+
+        .problem-text {
+            font-weight: 500;
+        }
+
+        .problems-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(101, 31, 255, 0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(101, 31, 255, 0.2);
+        }
+
+        .problems-note p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .problems-note strong {
+            color: var(--white);
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .solution-image {
+            max-width: 100%;
+            display: block;
+        }
+
+        .solution-text h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .solution-list {
+            list-style: none;
+        }
+
+        .solution-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .solution-list li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .x-icon {
+            width: 24px;
+            height: 24px;
+            background: rgba(243, 77, 71, 0.2);
+            border: 1px solid var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--coral);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* OFFER SECTION - HIDDEN INITIALLY */
+        .offer-section {
+            display: none;
+            padding: 3rem 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .offer-section.visible {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .offer-card {
+            background: linear-gradient(135deg, rgba(101, 31, 255, 0.2), rgba(255, 12, 136, 0.1));
+            border: 2px solid var(--magenta);
+            border-radius: 30px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+
+        .offer-unlocked {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--magenta);
+            color: var(--white);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .offer-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Timer */
+        .timer-box {
+            background: rgba(243, 77, 71, 0.15);
+            border: 1px solid rgba(243, 77, 71, 0.4);
+            border-radius: 16px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            color: var(--coral);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Pricing */
+        .price-block {
+            margin-bottom: 2rem;
+        }
+
+        .price-original {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            text-decoration: line-through;
+        }
+
+        .price-current {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--white), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .price-current span {
+            font-size: 2rem;
+        }
+
+        .price-savings {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyan), #00b894);
+            color: var(--bg-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 0.75rem;
+        }
+
+        /* Includes */
+        .offer-includes {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .includes-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .include-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .include-check {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--magenta), var(--orange));
+            color: var(--white);
+            padding: 1.25rem 2rem;
+            border: none;
+            border-radius: 16px;
+            font-family: inherit;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 12, 136, 0.4);
+            animation: pulse-btn 2s infinite;
+        }
+
+        @keyframes pulse-btn {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(255, 12, 136, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 15px 50px rgba(255, 12, 136, 0.5); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* Guarantees */
+        .guarantees {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Jorgito savings */
+        .savings-character {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 161, 17, 0.1);
+            border: 1px solid rgba(255, 161, 17, 0.3);
+            border-radius: 20px;
+            flex-wrap: wrap;
+        }
+
+        .savings-character img {
+            width: 120px;
+        }
+
+        .savings-character-text {
+            text-align: left;
+        }
+
+        .savings-character-text h4 {
+            color: var(--orange);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .savings-character-text p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 3rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(24, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--purple);
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 3rem 0;
+        }
+
+        .faq-grid {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--cyan);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-gray);
+        }
+
+        /* Instructor Section */
+        .instructor-section {
+            padding: 3rem 0;
+        }
+
+        .instructor-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            flex-wrap: wrap;
+        }
+
+        .instructor-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--purple);
+        }
+
+        .instructor-info {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .instructor-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .instructor-info .role {
+            color: var(--cyan);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .instructor-info p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Classroom Image Section */
+        .classroom-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .classroom-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .classroom-image {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+
+        .classroom-text {
+            text-align: left;
+        }
+
+        .classroom-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .classroom-text p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        footer img {
+            height: 35px;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .solution-content,
+            .classroom-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .solution-image,
+            .classroom-image {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .price-current {
+                font-size: 3.5rem;
+            }
+
+            .offer-card {
+                padding: 1.5rem;
+            }
+
+            .bg-shape {
+                opacity: 0.08;
+            }
+
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Shapes -->
+    <div class="bg-shapes">
+        <img src="assets/Forma_1.png" class="bg-shape shape-1" alt="">
+        <img src="assets/Forma_2.png" class="bg-shape shape-2" alt="">
+        <img src="assets/Forma_3.png" class="bg-shape shape-3" alt="">
+        <img src="assets/Forma_8.png" class="bg-shape shape-4" alt="">
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="assets/logo-evolucione-1-scaled.png" alt="Evolucione" class="logo">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                +400 docentes ya lo tienen
+            </div>
+            
+            <h1>Cuidar tu mente desde donde enseñas</h1>
+            
+            <p class="hero-subtitle">Un curso de gimnasia cerebral pensado para docentes con alta carga mental. Ejercicios de 1-2 minutos que puedes usar antes, durante o después de tu jornada.</p>
+
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-value">24</div>
+                    <div class="stat-label">Ejercicios prácticos</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Satisfacción</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1-2 min</div>
+                    <div class="stat-label">Por ejercicio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO SECTION - MAIN FOCUS -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-intro">
+                <h2>👇 Mira este video para entender cómo funciona</h2>
+                <p>Descubre cómo la gimnasia cerebral puede transformar tu día a día como docente</p>
+            </div>
+
+            <div class="video-wrapper">
+                <div class="video-glow"></div>
+                <div class="video-container">
+                    <iframe 
+                        id="youtube-video"
+                        src="https://www.youtube.com/embed/EQil5GmUF_s?enablejsapi=1&rel=0&modestbranding=1" 
+                        title="Gimnasia Cerebral para Docentes"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-cta">
+                    <span class="video-cta-icon">▶️</span>
+                    <span class="video-cta-text">Dale play y descubre el método</span>
+                </div>
+            </div>
+
+            <div class="video-progress" id="video-progress">
+                <div class="spinner"></div>
+                <span class="progress-text">Preparando tu oferta especial...</span>
+            </div>
+
+            <button class="skip-btn" id="skip-btn" onclick="revealOffer()">
+                Ya vi el video → Ver oferta especial
+            </button>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Te identificas con esto?</h2>
+                <p>La realidad mental del trabajo docente</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">😮‍💨</span>
+                    <span class="problem-text">Fatiga mental acumulada</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🎯</span>
+                    <span class="problem-text">Dificultad para sostener el foco</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🤯</span>
+                    <span class="problem-text">Sensación de saturación</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">😣</span>
+                    <span class="problem-text">Tensión corporal persistente</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🌫️</span>
+                    <span class="problem-text">Menos claridad al final del día</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">⚡</span>
+                    <span class="problem-text">Exigencia sostenida sin descanso</span>
+                </div>
+            </div>
+
+            <div class="problems-note">
+                <p>Nada de eso habla mal de ti como docente.<br><strong>Habla del contexto en el que trabajas.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-content">
+                <img src="assets/EMA_EXPLICACION.png" alt="Curso Online" class="solution-image">
+                
+                <div class="solution-text">
+                    <h2>¿Qué propone este curso?</h2>
+                    <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Una herramienta práctica de autorregulación cognitiva basada en:</p>
+                    
+                    <ul class="solution-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Movimientos simples</strong> — ejercicios de 1-2 minutos</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Respiración consciente</strong> — regula desde el cuerpo</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Atención dirigida</strong> — recupera claridad mental</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Flexibilidad total</strong> — úsalo cuando lo necesites</span>
+                        </li>
+                        <li>
+                            <span class="x-icon">✕</span>
+                            <span style="color: var(--text-gray);">No es terapia ni metodología pedagógica</span>
+                        </li>
+                        <li>
+                            <span class="x-icon">✕</span>
+                            <span style="color: var(--text-gray);">No requiere experiencia previa</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ OFFER SECTION - HIDDEN UNTIL VIDEO ENDS ============ -->
+    <section class="offer-section" id="offer-section">
+        <div class="container">
+            <div class="offer-card">
+                <div class="offer-unlocked">🎉 Oferta Desbloqueada</div>
+                
+                <h3 class="offer-title">Acceso completo al curso de Gimnasia Cerebral para Docentes</h3>
+
+                <div class="timer-box">
+                    <div class="timer-label">⏰ Esta oferta expira en:</div>
+                    <div class="timer-display" id="countdown">23:59:59</div>
+                </div>
+
+                <div class="price-block">
+                    <div class="price-original">Precio regular: $2,200 MXN</div>
+                    <div class="price-current"><span>$</span>300<span> MXN</span></div>
+                    <div class="price-savings">🎁 ¡Ahorras $1,900!</div>
+                </div>
+
+                <div class="offer-includes">
+                    <div class="includes-title">Tu acceso incluye:</div>
+                    <div class="includes-grid">
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>24 ejercicios prácticos</span>
+                        </div>
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>4 clases adicionales</span>
+                        </div>
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>Comunidad EMA de docentes</span>
+                        </div>
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>Certificado de finalización</span>
+                        </div>
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>Acceso de por vida</span>
+                        </div>
+                        <div class="include-item">
+                            <span class="include-check">✓</span>
+                            <span>7 días de garantía</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="cta-button">
+                    ¡Quiero acceder ahora! →
+                </a>
+
+                <div class="guarantees">
+                    <div class="guarantee-item">
+                        <span>🔒</span>
+                        <span>Pago 100% seguro</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span>✅</span>
+                        <span>Garantía 7 días</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span>💳</span>
+                        <span>Hotmart</span>
+                    </div>
+                </div>
+
+                <div class="savings-character">
+                    <img src="assets/jorgito-ahorro.png" alt="Ahorra">
+                    <div class="savings-character-text">
+                        <h4>¡Estás ahorrando $1,900!</h4>
+                        <p>Esta oferta especial no estará disponible por mucho tiempo. Aprovecha ahora.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <div class="section-header">
+                    <h2>Lo que dicen otros docentes</h2>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Después de 2 semanas notaba más claridad mental. Los ejercicios son cortos y funcionan."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/maestra_Laura.jpg" alt="Laura" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Laura Martin</h4>
+                                <p>Docente de Secundaria</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Lo que más me gustó es que no agrega carga. Se adapta a mi día, no al revés."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/Maestro_Carlos.jpg" alt="Carlos" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Carlos Pérez</h4>
+                                <p>Director de Primaria</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Me gusta porque son ejercicios simples pero retadores y puedo ir avanzando a mi ritmo."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/maestra_Ana.jpg" alt="Ana" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4>Ana Julia Hernández</h4>
+                                <p>Docente de Preparatoria</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <div class="section-header">
+                    <h2>Preguntas frecuentes</h2>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>No tengo tiempo para otro curso</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Los ejercicios son de 1-2 minutos. No reemplazan nada, se adaptan entre lo que ya haces. Es una herramienta, no una capacitación más.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Y si no soy constante?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                No exige constancia perfecta. Puedes usarlo cuando lo necesites y retomarlo cuando quieras. La idea es que quede disponible como recurso.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Durante cuánto tiempo tengo acceso?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                De por vida. Es tuyo para siempre. Muchos docentes vuelven a ciertos ejercicios según el momento del año o el nivel de carga.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>¿Qué pasa si no estoy satisfecho?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                7 días de garantía sin preguntas. Si no es para ti, te devolvemos tu dinero completo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructor -->
+            <div class="instructor-section">
+                <div class="instructor-card">
+                    <img src="assets/ema_milena_4.png" alt="Milena Sandoval" class="instructor-image">
+                    <div class="instructor-info">
+                        <h3>Milena Sandoval</h3>
+                        <p class="role">Especialista en Gimnasia Cerebral • CEO de Evolucione</p>
+                        <p>Más de dos décadas de experiencia trabajando con estudiantes, educadores y profesionales. Enfoque práctico, respetuoso y orientado a resultados reales en contextos educativos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classroom Section -->
+            <div class="classroom-section">
+                <div class="classroom-content">
+                    <img src="assets/EMA-AULA.png" alt="Gimnasia Cerebral en el Aula" class="classroom-image">
+                    <div class="classroom-text">
+                        <h3>¿Se puede usar también en el aula?</h3>
+                        <p>El curso está pensado principalmente para el uso personal del docente. Dicho esto, muchos de los ejercicios son tan simples que algunos docentes deciden utilizarlos como <strong>pausas breves con sus estudiantes</strong>, especialmente en momentos de cansancio o transición.</p>
+                        <p>No es una técnica pedagógica. Es una práctica sencilla que cada docente puede adaptar con criterio propio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="text-align: center; padding: 2rem 0;">
+                <a href="https://pay.hotmart.com/C103235667V?sck=HOTMART_PRODUCT_PAGE&off=24fqgkcw&hotfeature=32&bid=1771019114027" class="cta-button" style="max-width: 500px;">
+                    Acceder al curso por $300 MXN →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5213311138538?text=Hola,%20tengo%20dudas%20del%20curso%20de%20Gimnasia%20Cerebral%20para%20docentes%20🧠👩‍🏫" class="whatsapp-float" target="_blank" title="¿Dudas? Escríbenos">
+        <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="assets/logo-evolucione-1-scaled.png" alt="Evolucione">
+            <p>© 2025 Evolucione • Grupo Glivo</p>
+            <p style="margin-top: 0.5rem;">Producto comercializado con el apoyo de Hotmart</p>
+        </div>
+    </footer>
+
+    <!-- YouTube API & Scripts -->
+    <script>
+        let player;
+        let videoWatched = false;
+        let skipShown = false;
+
+        // Load YouTube API
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-video', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            // Video started
+            if (event.data === YT.PlayerState.PLAYING) {
+                document.getElementById('video-progress').classList.add('visible');
+                
+                // Show skip button after 45 seconds
+                if (!skipShown) {
+                    setTimeout(function() {
+                        document.getElementById('skip-btn').classList.add('visible');
+                        skipShown = true;
+                    }, 45000);
+                }
+            }
+
+            // Video ended
+            if (event.data === YT.PlayerState.ENDED && !videoWatched) {
+                videoWatched = true;
+                revealOffer();
+            }
+        }
+
+        function revealOffer() {
+            document.getElementById('video-progress').classList.remove('visible');
+            document.getElementById('skip-btn').classList.remove('visible');
+
+            const offerSection = document.getElementById('offer-section');
+            offerSection.classList.add('visible');
+
+            // Scroll to offer
+            setTimeout(function() {
+                offerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+
+            // Start countdown
+            startCountdown();
+        }
+
+        // Countdown timer
+        function startCountdown() {
+            let hours = 23;
+            let minutes = 59;
+            let seconds = 59;
+
+            function update() {
+                document.getElementById('countdown').textContent = 
+                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                if (seconds > 0) {
+                    seconds--;
+                } else if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                }
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            element.parentElement.classList.toggle('open');
+        }
+
+        // Fallback: show skip button after 2 minutes
+        setTimeout(function() {
+            if (!videoWatched && !skipShown) {
+                document.getElementById('skip-btn').classList.add('visible');
+                skipShown = true;
+            }
+        }, 120000);
+    </script>
+</body>
+</html>
