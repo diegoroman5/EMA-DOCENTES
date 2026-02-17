@@ -18,9 +18,9 @@
         body{font-family:'Poppins',-apple-system,sans-serif;background:var(--bg);color:var(--white);line-height:1.5;overflow-x:hidden;font-size:16px;-webkit-font-smoothing:antialiased}
         img{max-width:100%;height:auto;display:block}
         .container{width:100%;max-width:600px;margin:0 auto;padding:0 1rem}
-        header{padding:1rem 0;text-align:center;background:rgba(13,0,54,.95);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+        header{position:sticky;top:0;z-index:100;padding:1rem 0;text-align:center;background:rgba(13,0,54,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
         .logo{height:55px;width:auto;display:block;margin:0 auto}
-        .live{position:fixed;top:75px;left:.5rem;background:var(--coral);padding:.35rem .7rem;border-radius:20px;font-size:.7rem;font-weight:700;z-index:99;display:flex;align-items:center;gap:.35rem;box-shadow:0 2px 10px rgba(243,77,71,.4)}
+        .live{position:absolute;top:50%;left:1rem;transform:translateY(-50%);background:var(--coral);padding:.4rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700;z-index:10;display:flex;align-items:center;gap:.4rem;box-shadow:0 4px 15px rgba(243,77,71,.5)}
         .live-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1s infinite}
         @keyframes blink{50%{opacity:.3}}
         .hero{padding:1rem 0 .75rem;text-align:center}
@@ -139,8 +139,10 @@
     </style>
 </head>
 <body>
-    <header><img src="assets/logo-evolucione-1-scaled.png" alt="Evolucione" class="logo" width="180" height="55"></header>
-    <div class="live"><span class="live-dot"></span><span id="viewers">43</span> viendo</div>
+    <header>
+        <div class="live"><span class="live-dot"></span><span id="viewers">43</span> viendo</div>
+        <img src="assets/logo-evolucione-1-scaled.png" alt="Evolucione" class="logo" width="180" height="55">
+    </header>
     <section class="hero"><div class="container">
         <div class="badge"><span class="badge-dot"></span>+400 docentes lo usan</div>
         <h1>Recupera tu claridad mental en 2 minutos al día</h1>
