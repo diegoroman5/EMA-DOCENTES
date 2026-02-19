@@ -116,11 +116,11 @@
         .test-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--purple)}
         .test-name{font-size:.85rem;font-weight:600}
         .test-role{font-size:.7rem;color:var(--gray)}
-        .instructor{display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px}
-        .inst-img{width:80px;height:80px;border-radius:12px;object-fit:cover;border:2px solid var(--purple);flex-shrink:0}
-        .inst-name{font-size:1rem;font-weight:700}
-        .inst-role{font-size:.75rem;color:var(--cyan);margin-bottom:.25rem}
-        .inst-bio{font-size:.75rem;color:var(--gray)}
+        .instructor{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:linear-gradient(135deg,rgba(101,31,255,.1),rgba(255,12,136,.05));border:1px solid rgba(101,31,255,.3);border-radius:16px}
+        .inst-img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:3px solid var(--purple);flex-shrink:0}
+        .inst-name{font-size:1.1rem;font-weight:700}
+        .inst-role{font-size:.8rem;color:var(--cyan);margin-bottom:.5rem;font-weight:600}
+        .inst-bio{font-size:.75rem;color:var(--gray);margin:.25rem 0;line-height:1.4}
         .sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--bg) 80%,transparent);padding:.75rem;z-index:99}
         .sticky.show{display:block}
         .sticky-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;max-width:400px;margin:0 auto;background:linear-gradient(135deg,var(--magenta),var(--orange));color:#fff;padding:.9rem;border:0;border-radius:12px;font-family:inherit;font-size:.95rem;font-weight:700;text-decoration:none;text-transform:uppercase;box-shadow:0 -4px 20px rgba(255,12,136,.4);min-height:50px}
@@ -191,7 +191,21 @@
         <section class="section"><div class="container"><h2 class="section-title">¿Te suena familiar?</h2><div class="problems"><div class="problem"><span class="problem-icon">😮‍💨</span>Fatiga mental acumulada</div><div class="problem"><span class="problem-icon">🎯</span>Dificultad para el foco</div><div class="problem"><span class="problem-icon">🤯</span>Sensación de saturación</div><div class="problem"><span class="problem-icon">😣</span>Tensión que no se va</div><div class="problem"><span class="problem-icon">🌫️</span>Menos claridad al final del día</div></div></div></section>
         <section class="section"><div class="container"><h2 class="section-title">La solución</h2><div class="solution-grid"><img src="assets/EMA_EXPLICACION.png" class="solution-img" alt="Curso" width="200" height="200" loading="lazy"><ul class="solution-list"><li><span class="sol-check">✓</span><span><b>Ejercicios de 1-2 min</b> en cualquier momento</span></li><li><span class="sol-check">✓</span><span><b>Técnicas de respiración</b> para regularte</span></li><li><span class="sol-check">✓</span><span><b>Sin agregar carga</b> a tu día</span></li><li><span class="sol-check">✓</span><span><b>Resultados</b> desde la 1era semana</span></li></ul></div></div></section>
         <section class="section"><div class="container"><h2 class="section-title">Lo que dicen docentes</h2><div class="testimonials"><div class="testimonial"><p class="test-text">"En 2 semanas noté más claridad mental. Funcionan."</p><div class="test-author"><img src="assets/maestra_Laura.jpg" class="test-avatar" alt="Laura" width="40" height="40" loading="lazy"><div><div class="test-name">Laura Martin</div><div class="test-role">Secundaria</div></div></div></div><div class="testimonial"><p class="test-text">"No agrega carga. Se adapta a mi día."</p><div class="test-author"><img src="assets/Maestro_Carlos.jpg" class="test-avatar" alt="Carlos" width="40" height="40" loading="lazy"><div><div class="test-name">Carlos Pérez</div><div class="test-role">Director</div></div></div></div><div class="testimonial"><p class="test-text">"Ejercicios simples pero efectivos."</p><div class="test-author"><img src="assets/maestra_Ana.jpg" class="test-avatar" alt="Ana" width="40" height="40" loading="lazy"><div><div class="test-name">Ana Julia</div><div class="test-role">Preparatoria</div></div></div></div></div></div></section>
-        <section class="section"><div class="container"><div class="instructor"><img src="assets/ema_milena_4.png" class="inst-img" alt="Milena" width="80" height="80" loading="lazy"><div><div class="inst-name">Milena Sandoval</div><div class="inst-role">Especialista en Gimnasia Cerebral</div><p class="inst-bio">+20 años ayudando a educadores.</p></div></div></div></section>
+        <section class="section"><div class="container">
+                <h2 class="section-title">Tu instructora</h2>
+                <div class="instructor">
+                    <img src="assets/ema_milena_4.png" class="inst-img" alt="Milena" width="100" height="100" loading="lazy">
+                    <div>
+                        <div class="inst-name">Milena Sandoval</div>
+                        <div class="inst-role">Neuro-Experta en Alta Performance • CEO Evolucione</div>
+                        <p class="inst-bio">🧠 +25 años de experiencia en desarrollo cognitivo</p>
+                        <p class="inst-bio">📺 Experta invitada en Telemundo (Hoy Día)</p>
+                        <p class="inst-bio">👥 +1.8M seguidores en TikTok | 245K en Instagram</p>
+                        <p class="inst-bio">🌎 Ha capacitado miles de personas en México, Colombia y Brasil</p>
+                        <p class="inst-bio">💜 "Mi pasión es activar el potencial de tu cerebro"</p>
+                    </div>
+                </div>
+            </div></section>
     </div>
     <div class="sticky" id="sticky"><a href="https://pay.hotmart.com/C103235667V?checkoutMode=10" class="sticky-btn">¡MI DESCUENTO! <span class="sticky-timer">⏰ <span id="stickyTimer">29:59</span></span></a></div>
     <a href="https://wa.me/5213311138538?text=Hola%20EMA%20Educadores%20🧠%20Quiero%20más%20información" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
